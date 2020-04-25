@@ -31,7 +31,7 @@ Operators are functions which help progress through different stages in Genetic 
 3. Mutation Operator: The idea behind mutation is to allow for a more diverse pool of solutions. Mutations may sometimes deter and may sometimes aid in problem-solving and thus are left to chance. The main aim is to insert random genes in offspring to maintain the diversity in population to avoid premature convergence and thus a poor solution.
 
 ## FLOW-CHART:
-
+![relative path is wrong](flow-chart for genetic algo.PNG)
 Now that we have understood the basic flow-chart and algorithm of Genetic Algorithms. Let us take a small look at its implementation.
 
 ## IMPLEMENTATION:
