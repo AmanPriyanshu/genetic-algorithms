@@ -33,7 +33,7 @@ Operators are functions which help progress through different stages in Genetic 
 ## FLOW-CHART:
 Now that we have understood the basic flow-chart and algorithm of Genetic Algorithms. Let us take a small look at its implementation.
 
-![relative path is wrong](flow-chart for genetic algo.PNG)
+![relative path is wrong](flowchart.png)
 
 ## IMPLEMENTATION:
 Please take a look at the code available here: https://github.com/AmanPriyanshu/genetic-algorithms/blob/master/linear_regression_with_ga.py
