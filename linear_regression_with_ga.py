@@ -95,7 +95,7 @@ def genetic_algorithm():
 def imager(cga, clr):
 	plt.scatter([i for i in range(cga.shape[0])], cga, color='green', marker='.')
 	plt.scatter([i for i in range(cga.shape[0])], clr, color='red', marker='.')
-	plt.savefig('gaussian.png')
+	plt.savefig('ga_vs_lr.png')
 	plt.clf()
 
 def main():
