@@ -37,3 +37,10 @@ Now that we have understood the basic flow-chart and algorithm of Genetic Algori
 
 ## IMPLEMENTATION:
 Please take a look at the code available here: https://github.com/AmanPriyanshu/genetic-algorithms/blob/master/linear_regression_with_ga.py
+
+## COMPARISON:
+Take a look at the quick comparison between GA and Linear Regression to find the slop in the range [-1000, 1000]. We can clearly see that GA outperforms LR in terms of iterations, i.e. it is highly optimized. On top of that unlike LR which requires hypertuning of alpha there is no such thing required here.
+GA - Green
+LR - Red
+
+![relative path is wrong](ga_vs_lr.png)
