@@ -1,5 +1,6 @@
 import numpy as np
 import random
+import matplotlib.pyplot as plt
 
 def create_dataset(n, slope):
 	data = np.empty([n, 2])
@@ -26,20 +27,25 @@ def lr_grad(w, Y, y_pred, X, alpha):
 
 def lr_approach(iterations, data):
 	w = [0]
+	c = 0
 	for i in range(iterations):
 		y_pred = lr_predict(data.T[0], w)
 		#print(y_pred)
 		rms = lr_cost(y_pred, data.T[1])
 		#print(rms)
-		w = lr_grad(w, data.T[1], y_pred, data.T[0], 0.00001)
+		w = lr_grad(w, data.T[1], y_pred, data.T[0], 0.0001)
 		#print(w)
-	return w
+		if int(w[0]+1) == 602:
+			break
+		c += 1
+	return w, c
 
-def linear_regression(iterations):
+def linear_regression(iterations=1000):
 	data = create_dataset(100, 602)
-	w = lr_approach(iterations, data)
-	print(w[0])
-linear_regression(10)
+	w, c = lr_approach(iterations, data)
+	print(int(w[0]+1), 'at iteration', c)
+	return c
+
 
 """ Let us do the same thing using GA and compare the results """
 # Assuming slope ranges from -1000 to 1000. This will be the sample space for our individuals.
@@ -84,5 +90,24 @@ def genetic_algorithm():
 		value = gen[0]
 		c += 1
 	print(value, 'at iteration', c)
+	return c
 
-genetic_algorithm()
+def imager(cga, clr):
+	plt.scatter([i for i in range(cga.shape[0])], cga, color='green', marker='.')
+	plt.scatter([i for i in range(cga.shape[0])], clr, color='red', marker='.')
+	plt.savefig('gaussian.png')
+	plt.clf()
+
+def main():
+	cga = []
+	clr = []
+	for i in range(100):
+		cga.append(genetic_algorithm())
+		clr.append(linear_regression())
+	cga = np.array(cga)
+	clr = np.array(clr)
+	print(np.mean(cga))
+	print(np.mean(clr))
+	imager(cga, clr)
+
+main()
