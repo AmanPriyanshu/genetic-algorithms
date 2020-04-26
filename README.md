@@ -44,3 +44,7 @@ GA - Green
 LR - Red
 
 ![relative path is wrong](ga_vs_lr.png)
+
+## CONCLUSION
+
+Genetic Algorithms can be used a s alternative methods for optimization.
